@@ -1,0 +1,51 @@
+﻿<Window x:Class="BibliotecaPOO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestor de Biblioteca" Height="500" Width="450">
+    <StackPanel Margin="15">
+
+        <TextBlock Text="Título:" FontWeight="Bold"/>
+        <TextBox x:Name="txtTitulo" Margin="0,0,0,10"/>
+
+        <TextBlock Text="Autor:" FontWeight="Bold"/>
+        <TextBox x:Name="txtAutor" Margin="0,0,0,10"/>
+
+        <TextBlock Text="Año:" FontWeight="Bold"/>
+        <TextBox x:Name="txtAno" Margin="0,0,0,15"/>
+
+        <Button x:Name="btnAgregar" Content="Agregar Libro" 
+                Click="btnAgregar_Click" Height="30" Background="#FF4CAF50" Foreground="White"/>
+
+        <TextBlock Text="Buscar por título:" FontWeight="Bold" Margin="0,15,0,5"/>
+        <TextBox x:Name="txtBuscar" TextChanged="txtBuscar_TextChanged"/>
+
+        <StackPanel Orientation="Horizontal" Margin="0,10">
+            <TextBlock Text="Ordenar por:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <ComboBox x:Name="cmbOrdenar" Width="120" SelectionChanged="cmbOrdenar_SelectionChanged">
+                <ComboBoxItem Content="Título (A-Z)"/>
+                <ComboBoxItem Content="Título (Z-A)"/>
+                <ComboBoxItem Content="Autor (A-Z)"/>
+                <ComboBoxItem Content="Autor (Z-A)"/>
+                <ComboBoxItem Content="Año (ascendente)"/>
+                <ComboBoxItem Content="Año (descendente)"/>
+            </ComboBox>
+        </StackPanel>
+
+        <ListBox x:Name="lstLibros" Margin="0,15" Height="200" SelectionChanged="lstLibros_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding MostrarInfo}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15">
+            <Button x:Name="btnEditar" Content="Editar" Width="80" Height="30" 
+                    Click="btnEditar_Click" Margin="5" Background="#FF2196F3" Foreground="White" IsEnabled="False"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" Width="80" Height="30" 
+                    Click="btnCancelar_Click" Margin="5" IsEnabled="False" Background="#FF9E9E9E"/>
+            <Button x:Name="btnEliminar" Content="Eliminar" Width="80" Height="30" 
+                    Click="btnEliminar_Click" Margin="5" Background="#FFF44336" Foreground="White" IsEnabled="False"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
