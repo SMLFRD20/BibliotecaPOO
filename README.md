@@ -10,7 +10,7 @@ _Aplicación de escritorio para gestión de biblioteca desarrollada en WPF (.NET
   - Orden cronológico (ascendente/descendente) por año
 - Interfaz intuitiva con validación de datos
 
-## 🛠 Tecnologías utilizadas
+## Tecnologías utilizadas
 - **Frontend**: WPF (XAML/C#)
 - **Backend**: .NET 8
 - **Base de datos**: SQLite + Entity Framework Core
